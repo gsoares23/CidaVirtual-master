@@ -5,5 +5,8 @@
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
     <string name="email">Email</string>
+    <string name="tutores">TUTORES</string>
+    <string name="administrador">ADMINISTRADOR</string>
+    <string name="sou_um_admin">Sou um Admin</string>
     <color name="verde">#169898</color>
 </resources>
