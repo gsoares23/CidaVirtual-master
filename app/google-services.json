@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "146098393097",
+    "firebase_url": "https://cidavirtual-9cf11.firebaseio.com",
+    "project_id": "cidavirtual-9cf11",
+    "storage_bucket": "cidavirtual-9cf11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146098393097:android:e9e86fc6464702fbb068d8",
+        "android_client_info": {
+          "package_name": "com.example.cidavirtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146098393097-gtp89q54t4a8d602rmv6e9m2osf7i44t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cidavirtual",
+            "certificate_hash": "8641a082f0bb70e3cef13e594ab45b9e568ea8d5"
+          }
+        },
+        {
+          "client_id": "146098393097-gsm20skr0acdb2dn3jelmv60qlsja594.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrTpgsFN7tlPY0nEXIiGCKPKjdIxzfiP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146098393097-gsm20skr0acdb2dn3jelmv60qlsja594.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/verde">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:contentDescription=""
+            android:src="@drawable/applogo"
+            tools:ignore="ContentDescription,HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUTORES"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Controle Integrado de Desenvolvimento Acadêmico"
+            android:id="@+id/title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFF"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="HardcodedText" />
+
+        <!--User Email-->
+        <EditText
+            android:id="@+id/usernametutor"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:hint="@string/email"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColorHint="#E4292323"
+            android:textColor="#E4292323"
+            android:maxLength="40"
+            android:background="@drawable/edittextborda"
+            android:singleLine="true"
+            tools:ignore="Autofill,TextFields,UnusedAttribute" />
+
+        <!-- User Password -->
+        <EditText
+            android:id="@+id/senhatutor"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ellipsize="start"
+            android:gravity="center"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:hint="@string/senha"
+            android:textColor="#E4292323"
+            android:textColorHint="#E4292323"
+            android:maxLength="20"
+            android:inputType="textPassword"
+            android:background="@drawable/edittextborda"
+            android:singleLine="true"
+            android:autofillHints=""
+            tools:ignore="UnusedAttribute" />
+
+        <!--Login Button-->
+        <Button
+            android:id="@+id/btlogintutor"
+            android:background="@drawable/botaoborda"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/entrar"
+            android:textSize="20sp"
+            android:layout_height="40dp"
+            android:textColor="#FFFF"
+            android:shadowRadius="5"/>
+
+        <Button
+            android:id="@+id/btsouadmin"
+            android:background="@drawable/botaoborda2"
+            android:layout_width="fill_parent"
+            android:text="Sou um Admin"
+            android:textSize="20sp"
+            android:layout_height="40dp"
+            android:textColor="#FFFF"
+            android:shadowRadius="5" />
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

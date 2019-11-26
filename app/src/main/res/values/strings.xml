@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CidaVirtual</string>
+    <string name="login">Login</string>
+    <string name="cida_virtual">Cida Virtual</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="email">Email</string>
+    <color name="verde">#169898</color>
+</resources>
