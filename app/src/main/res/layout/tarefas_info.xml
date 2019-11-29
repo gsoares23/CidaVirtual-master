@@ -15,7 +15,7 @@
         android:textStyle="bold"
         android:textColor="#ffff"
         android:text="data"
-        android:textSize="24sp"
+        android:textSize="20sp"
         />
 
 

@@ -10,7 +10,15 @@
 <ListView
     android:id="@+id/listView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    android:clickable="false"
+    android:dividerHeight="3dp"
+    android:listSelector="@android:color/transparent"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    />
 
 
 

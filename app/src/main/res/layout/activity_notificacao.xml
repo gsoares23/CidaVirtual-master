@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textStyle="bold"
+        android:textSize="23sp"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="32dp" />
 
@@ -20,8 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="txtMsg"
+        android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="123dp" />
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="123dp"
+        android:gravity="center_horizontal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
