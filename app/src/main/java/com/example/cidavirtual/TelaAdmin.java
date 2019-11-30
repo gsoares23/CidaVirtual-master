@@ -43,6 +43,7 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    DatabaseReference notificacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
         btAdd = (Button) findViewById(R.id.btaddevento);
         btCalendario = (Button) findViewById(R.id.btescolhadata);
         textView = (TextView) findViewById(R.id.mostrardata);
+        notificacao = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cidavirtual-9cf11.firebaseio.com/").child("notificacao");
 
 
 
@@ -84,24 +86,18 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
              e.setUid(UUID.randomUUID().toString());
              e.setNome(edtNome.getText().toString());
              e.setData(textView.getText().toString());
+
+             notificacao.setValue(edtNome.getText().toString());
+
              databaseReference.child("Eventos").child(e.getUid()).setValue(e);
              limparcampos();
 
 //NOTIFICAÇÃO
-             Intent intent = new Intent(TelaAdmin.this, NotificacaoActivity.class);
-             intent.putExtra("mensagem", edtNome.getText().toString());
-             int id = (int) (Math.random()*1000);
-             PendingIntent pi = PendingIntent.getActivity(getBaseContext(), id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-             Notification notification = new Notification.Builder(getBaseContext())
-                     .setContentTitle("Novo Conteudo")
-                     .setContentText(edtNome.getText())
-                     .setSmallIcon(R.mipmap.ic_launcher)
-                     .setContentIntent(pi).build();
-             NotificationManager notificationManager =
-                     (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-             notification.flags |= Notification.FLAG_AUTO_CANCEL;
+             //Intent intent = new Intent(TelaAdmin.this, NotificacaoActivity.class);
+             //intent.putExtra("mensagem", edtNome.getText().toString());
 
-             notificationManager.notify(id, notification);
+
+
 
 
 

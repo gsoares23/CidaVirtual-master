@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class TelaLoginAdmin extends AppCompatActivity {
 
@@ -69,6 +70,7 @@ public class TelaLoginAdmin extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Falha no login! Por favor, tente novamente.", Toast.LENGTH_LONG).show();
                         }
                     }
+
                 });
     }
 
@@ -77,5 +79,12 @@ public class TelaLoginAdmin extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
 
         btLogin = findViewById(R.id.btLogin);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
     }
 }

@@ -1,12 +1,18 @@
 package com.example.cidavirtual;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -23,13 +29,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class TelaTarefas extends AppCompatActivity {
 
     ListView listView;
     FirebaseDatabase database;
-    DatabaseReference ref;
+    DatabaseReference ref, notificacao;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     Evento evento;
@@ -52,7 +64,10 @@ public class TelaTarefas extends AppCompatActivity {
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
 
                     evento = ds.getValue(Evento.class);
-                    list.add(evento.getData().toString() + "\n"+evento.getNome().toString());
+                    list.add(evento.getData().toString() + "\n"+evento.getNome());
+                    Log.d("data", evento.getData().toString());
+
+
 
                 }
 
@@ -64,6 +79,37 @@ public class TelaTarefas extends AppCompatActivity {
 
             }
         });
+
+
+
+        notificacao = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cidavirtual-9cf11.firebaseio.com/");
+
+        notificacao.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                String notificacao = dataSnapshot.child("notificacao").getValue().toString();
+
+                int id = (int) (Math.random()*10000);
+                Notification notification = new Notification.Builder(getBaseContext())
+                        .setContentTitle("Novo Evento!")
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentText(notificacao)
+
+                        .build();
+
+                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                notification.flags |= Notification.FLAG_AUTO_CANCEL;
+                notificationManager.notify(id,notification);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 
@@ -111,6 +157,15 @@ public class TelaTarefas extends AppCompatActivity {
 
         AlertDialog alertDialog = alerta.create();
         alertDialog.show();
+
+
+
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
 
 
