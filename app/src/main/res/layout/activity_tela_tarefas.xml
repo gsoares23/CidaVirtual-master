@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/verde">
 
-<ListView
-    android:id="@+id/listView"
+<TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:focusableInTouchMode="false"
-    android:focusable="false"
-    android:clickable="false"
-    android:dividerHeight="3dp"
-    android:listSelector="@android:color/transparent"
-    tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp"
-    />
+    android:textSize="20sp"
+    android:layout_marginTop="20dp"
+    android:textStyle="bold"
+    android:background="@drawable/botao"
+    android:gravity="center"
+    android:textColor="#ffff"
+    android:padding="5dp"
+    android:layout_gravity="center"
+    android:text="Esses são seus próximos prazos: "/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
 
 
 </LinearLayout>

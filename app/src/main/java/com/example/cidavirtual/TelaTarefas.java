@@ -1,50 +1,42 @@
 package com.example.cidavirtual;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import android.widget.Toolbar;
+
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.cidavirtual.adapter.Evento;
-import com.google.firebase.FirebaseApp;
+import com.example.cidavirtual.adapter.EventoAdapter;
+import com.example.cidavirtual.modelo.Evento;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class TelaTarefas extends AppCompatActivity {
 
-    ListView listView;
     FirebaseDatabase database;
     DatabaseReference ref, notificacao;
-    ArrayList<String> list;
-    ArrayAdapter<String> adapter;
-    Evento evento;
+    RecyclerView recycler;
+    ArrayList<Evento> list;
+    EventoAdapter adapter;
+
 
 
     @Override
@@ -52,26 +44,22 @@ public class TelaTarefas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_tarefas);
 
-        evento = new Evento();
-        listView = (ListView) findViewById(R.id.listView);
-        database = FirebaseDatabase.getInstance();
-        ref = database.getReference("Eventos");
-        list = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(this, R.layout.tarefas_info,R.id.tarefasInfo, list);
+        recycler = (RecyclerView) findViewById(R.id.recycler);
+        recycler.setLayoutManager(new LinearLayoutManager(this));
+        list = new ArrayList<Evento>();
+        ref = FirebaseDatabase.getInstance().getReference().child("Eventos");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds: dataSnapshot.getChildren()) {
-
-                    evento = ds.getValue(Evento.class);
-                    list.add(evento.getData().toString() + "\n"+evento.getNome());
-                    Log.d("data", evento.getData().toString());
-
-
-
+                for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
+                {
+                    Evento e = dataSnapshot1.getValue(Evento.class);
+                    list.add(e);
                 }
 
-                listView.setAdapter(adapter);
+                adapter = new EventoAdapter(TelaTarefas.this,list);
+                recycler.setAdapter(adapter);
+
             }
 
             @Override
@@ -79,6 +67,8 @@ public class TelaTarefas extends AppCompatActivity {
 
             }
         });
+
+
 
 
 

@@ -38,6 +38,7 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
     EditText edtNome;
     Button btAdd;
     Button btCalendario;
+    Button btTarefas;
     TextView textView;
 
 
@@ -51,6 +52,7 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
         setContentView(R.layout.activity_tela_admin);
         edtNome = (EditText) findViewById(R.id.edittextevento);
         btAdd = (Button) findViewById(R.id.btaddevento);
+        btTarefas = (Button) findViewById(R.id.bttarefas);
         btCalendario = (Button) findViewById(R.id.btescolhadata);
         textView = (TextView) findViewById(R.id.mostrardata);
         notificacao = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cidavirtual-9cf11.firebaseio.com/").child("notificacao");
@@ -92,13 +94,6 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
              databaseReference.child("Eventos").child(e.getUid()).setValue(e);
              limparcampos();
 
-//NOTIFICAÇÃO
-             //Intent intent = new Intent(TelaAdmin.this, NotificacaoActivity.class);
-             //intent.putExtra("mensagem", edtNome.getText().toString());
-
-
-
-
 
 
 
@@ -123,9 +118,18 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
 
          }
 
+         btTarefas.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(TelaAdmin.this, TelaTarefas.class);
+                 startActivity(intent);
+             }
+         });
+
 
     }
 });
+
 
 
     }
@@ -146,13 +150,8 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayofMonth) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, year);
-        c.set(Calendar.MONTH, month);
-        c.set(Calendar.DAY_OF_MONTH, dayofMonth);
-        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-
-        textView.setText(currentDateString);
+       String date = + dayofMonth + "/" + month + "/" + year;
+        textView.setText(date);
 
     }
 

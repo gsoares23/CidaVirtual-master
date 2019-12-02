@@ -12,7 +12,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".NotificacaoActivity"></activity>
         <activity android:name=".TelaLoginTutores" />
-        <activity android:name=".TelaTarefas" />
+        <activity android:name=".TelaTarefas"/>
         <activity
             android:name=".TelaAdmin"
             android:label="TelaPrincipal"
@@ -21,6 +21,8 @@
             android:name=".TelaLoginAdmin"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"
