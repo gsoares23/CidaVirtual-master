@@ -1,4 +1,4 @@
-package com.example.cidavirtual.adapter;
+package comm.gabrielsoares.cidavirtual.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cidavirtual.R;
-import com.example.cidavirtual.TelaTarefas;
-import com.example.cidavirtual.modelo.Evento;
+
+import comm.gabrielsoares.cidavirtual.R;
+import comm.gabrielsoares.cidavirtual.TelaTarefas;
+import comm.gabrielsoares.cidavirtual.modelo.Evento;
 
 import java.util.List;
 

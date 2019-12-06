@@ -1,26 +1,22 @@
-package com.example.cidavirtual;
+package comm.gabrielsoares.cidavirtual;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
-import android.widget.Toolbar;
 
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-import com.example.cidavirtual.adapter.EventoAdapter;
-import com.example.cidavirtual.modelo.Evento;
+
+import comm.gabrielsoares.cidavirtual.R;
+import comm.gabrielsoares.cidavirtual.adapter.EventoAdapter;
+import comm.gabrielsoares.cidavirtual.modelo.Evento;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

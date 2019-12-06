@@ -1,9 +1,12 @@
-package com.example.cidavirtual;
+package comm.gabrielsoares.cidavirtual;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import comm.gabrielsoares.cidavirtual.R;
+
 
 public class NotificacaoActivity extends AppCompatActivity {
 

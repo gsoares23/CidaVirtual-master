@@ -1,6 +1,4 @@
-package com.example.cidavirtual.modelo;
-
-import android.widget.CalendarView;
+package comm.gabrielsoares.cidavirtual.modelo;
 
 public class Evento {
 

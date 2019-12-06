@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.cidavirtual">
+    package="comm.gabrielsoares.cidavirtual">
 
     <application
         android:icon="@drawable/applogo"
@@ -10,21 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".NotificacaoActivity"></activity>
-        <activity android:name=".TelaLoginTutores" />
-        <activity android:name=".TelaTarefas"/>
+
+        <activity android:name="comm.gabrielsoares.cidavirtual.NotificacaoActivity" />
+        <activity android:name="comm.gabrielsoares.cidavirtual.TelaLoginTutores" />
+        <activity android:name="comm.gabrielsoares.cidavirtual.TelaTarefas" />
         <activity
-            android:name=".TelaAdmin"
+            android:name="comm.gabrielsoares.cidavirtual.TelaAdmin"
             android:label="TelaPrincipal"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TelaLoginAdmin"
+            android:name="comm.gabrielsoares.cidavirtual.TelaLoginAdmin"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-
         <activity
-            android:name=".SplashScreen"
+            android:name="comm.gabrielsoares.cidavirtual.SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">

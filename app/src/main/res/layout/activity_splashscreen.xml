@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verde"
-    tools:context=".SplashScreen">
+    tools:context="com.gabrielsoares.cidavirtual.comm.gabrielsoares.cidavirtual.SplashScreen">
 
     <LinearLayout
         android:gravity="center"

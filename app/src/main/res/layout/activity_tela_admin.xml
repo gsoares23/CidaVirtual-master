@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
-    tools:context=".TelaAdmin"
+    tools:context="com.gabrielsoares.cidavirtual.comm.gabrielsoares.cidavirtual.TelaAdmin"
     android:background="@color/verde"
     android:orientation="vertical">
 

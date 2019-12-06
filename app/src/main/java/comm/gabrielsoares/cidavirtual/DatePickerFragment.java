@@ -1,4 +1,4 @@
-package com.example.cidavirtual;
+package comm.gabrielsoares.cidavirtual;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

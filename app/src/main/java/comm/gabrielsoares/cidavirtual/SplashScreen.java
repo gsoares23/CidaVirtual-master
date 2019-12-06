@@ -1,7 +1,6 @@
-package com.example.cidavirtual;
+package comm.gabrielsoares.cidavirtual;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -10,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import comm.gabrielsoares.cidavirtual.R;
+
 
 public class SplashScreen extends AppCompatActivity {
     @Override

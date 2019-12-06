@@ -1,36 +1,26 @@
-package com.example.cidavirtual;
+package comm.gabrielsoares.cidavirtual;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import java.text.DateFormat;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 
-
-import com.example.cidavirtual.modelo.Evento;
+import comm.gabrielsoares.cidavirtual.R;
+import comm.gabrielsoares.cidavirtual.modelo.Evento;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Calendar;
 import java.util.UUID;
 
 
@@ -91,7 +81,7 @@ public class TelaAdmin extends AppCompatActivity implements DatePickerDialog.OnD
 
              notificacao.setValue(edtNome.getText().toString());
 
-             databaseReference.child("Eventos").child(e.getUid()).setValue(e);
+             databaseReference.child("Eventos").child(e.getData()).setValue(e);
              limparcampos();
 
 
